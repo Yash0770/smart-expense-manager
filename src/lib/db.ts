@@ -1,24 +1,28 @@
 import mongoose from "mongoose";
 
+// Helper to safely get env variables
 function getEnv(name: string): string {
   const value = process.env[name];
   if (!value) {
-    throw new Error(`Missing environment variable: ${name}`);
+    throw new Error(`❌ Missing environment variable: ${name}`);
   }
   return value;
 }
 
 const MONGODB_URI = getEnv("MONGODB_URI");
 
+// Cache type
 type MongooseCache = {
   conn: typeof mongoose | null;
   promise: Promise<typeof mongoose> | null;
 };
 
+// Extend globalThis
 declare global {
   var mongoose: MongooseCache | undefined;
 }
 
+// Initialize cache
 const cached: MongooseCache = global.mongoose ?? {
   conn: null,
   promise: null,
@@ -27,14 +31,29 @@ const cached: MongooseCache = global.mongoose ?? {
 global.mongoose = cached;
 
 export async function connectDB() {
-  if (cached.conn) return cached.conn;
+  try {
+    // Already connected
+    if (cached.conn) {
+      console.log("🟢 MongoDB already connected");
+      return cached.conn;
+    }
 
-  // Create new connection promise if not exists
-  if (!cached.promise) {
-    cached.promise = mongoose.connect(MONGODB_URI).then((m) => m);
+    // Create connection
+    if (!cached.promise) {
+      console.log("🟡 Connecting to MongoDB...");
+
+      cached.promise = mongoose.connect(MONGODB_URI, {
+        dbName: "smart-expense-manager",
+      });
+    }
+
+    cached.conn = await cached.promise;
+
+    console.log("✅ MongoDB connected successfully");
+
+    return cached.conn;
+  } catch (error) {
+    console.error("❌ MongoDB connection error:", error);
+    throw error;
   }
-
-  cached.conn = await cached.promise;
-
-  return cached.conn;
 }
