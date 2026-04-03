@@ -1,9 +1,14 @@
+import { JwtPayload } from "jsonwebtoken";
 import { verifyToken } from "./auth";
 
-export function getUserFromRequest(req: Request) {
+export interface UserPayload extends JwtPayload {
+  userId: string;
+}
+
+export function getUserFromRequest(req: Request): UserPayload | null {
   const authHeader = req.headers.get("authorization");
 
-  if (!authHeader) return null;
+  if (!authHeader || !authHeader.startsWith("Bearer ")) return null;
 
   const token = authHeader.split(" ")[1];
 
@@ -11,5 +16,11 @@ export function getUserFromRequest(req: Request) {
 
   const decoded = verifyToken(token);
 
-  return decoded;
+  // return decoded;
+  // Type guard
+  if (!decoded || typeof decoded === "string") return null;
+
+  if (!("userId" in decoded)) return null;
+
+  return decoded as UserPayload;
 }
