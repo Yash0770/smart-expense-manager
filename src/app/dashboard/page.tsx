@@ -9,10 +9,8 @@ import MonthlyChart from "@/src/components/charts/MonthlyChart";
 import CategoryChart from "@/src/components/charts/CategoryChart";
 import Insights from "@/src/components/Insights";
 
-import {
-  getMonthlyData,
-  getCategoryData,
-} from "@/src/lib/analytics";
+import { getMonthlyData, getCategoryData } from "@/src/lib/analytics";
+import AIInsights from "@/src/components/AIInsights";
 
 export default function Dashboard() {
   const { data, isLoading } = useQuery({
@@ -42,6 +40,7 @@ export default function Dashboard() {
         </div>
 
         <Insights expenses={expenses} />
+        {/* <AIInsights expenses={expenses} /> */}
 
         <ExpenseList />
       </div>
