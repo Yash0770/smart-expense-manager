@@ -2,37 +2,40 @@
 
 import { useState } from "react";
 import { api } from "@/src/lib/api";
+import toast from "react-hot-toast";
+import { CreateExpenseInput } from "@/src/types/expense";
 
 export default function AddExpenseForm() {
-  const [form, setForm] = useState({
+  const [form, setForm] = useState<CreateExpenseInput>({
     title: "",
-    amount: "",
+    amount: 0,
     category: "",
     date: "",
   });
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    await api.post("/expenses", {
-      ...form,
-      amount: Number(form.amount),
-    });
+    try {
+      await api.post("/expenses", form);
 
-    alert("Expense added ✅");
+      toast.success("Expense added ✅");
 
-    setForm({
-      title: "",
-      amount: "",
-      category: "",
-      date: "",
-    });
+      setForm({
+        title: "",
+        amount: 0,
+        category: "",
+        date: "",
+      });
+    } catch (error) {
+      toast.error("Failed to add expense ❌");
+    }
   };
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-white p-4 md:p-6 rounded-2xl shadow-md w-full"
+      className="bg-white dark:bg-gray-900 p-4 md:p-6 rounded-2xl shadow-md w-full"
     >
       <h2 className="text-lg md:text-xl font-semibold mb-4">
         Add Expense
@@ -54,7 +57,7 @@ export default function AddExpenseForm() {
           className="input"
           value={form.amount}
           onChange={(e) =>
-            setForm({ ...form, amount: e.target.value })
+            setForm({ ...form, amount: Number(e.target.value) })
           }
         />
 
@@ -77,7 +80,7 @@ export default function AddExpenseForm() {
         />
       </div>
 
-      <button className="mt-4 w-full bg-black text-white py-2 rounded-lg">
+      <button className="mt-4 w-full bg-black dark:bg-white dark:text-black text-white py-2 rounded-lg">
         Add Expense
       </button>
     </form>
