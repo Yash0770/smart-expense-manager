@@ -1,6 +1,8 @@
+import { IconName } from "../components/ui/Icon/Icon";
+
 export type SidebarItem = {
   label: string;
-  icon: string;
+  icon: IconName;
   path: string;
 };
 

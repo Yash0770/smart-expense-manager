@@ -1,7 +1,7 @@
 import React from "react";
 import { ICON_MAP } from "./iconMap";
 
-type IconName = keyof typeof ICON_MAP;
+export type IconName = keyof typeof ICON_MAP;
 
 interface IconProps {
   name: IconName;
