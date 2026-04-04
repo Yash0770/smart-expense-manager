@@ -11,6 +11,7 @@ import Insights from "@/src/components/Insights";
 
 import { getMonthlyData, getCategoryData } from "@/src/lib/analytics";
 import AIInsights from "@/src/components/AIInsights";
+import FadeIn from "@/src/components/ui/FadeIn";
 
 export default function Dashboard() {
   const { data, isLoading } = useQuery({
@@ -30,19 +31,29 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-black p-4 md:p-8">
-      <div className="max-w-6xl mx-auto space-y-6">
-        <AddExpenseForm />
+      <div className="max-w-7xl mx-auto space-y-6">
+        <FadeIn>
+          <AddExpenseForm />
+        </FadeIn>
 
-        {/* Charts */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <MonthlyChart data={monthlyData} />
-          <CategoryChart data={categoryData} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <FadeIn>
+            <MonthlyChart data={monthlyData} />
+          </FadeIn>
+
+          <FadeIn>
+            <CategoryChart data={categoryData} />
+          </FadeIn>
         </div>
 
-        <Insights expenses={expenses} />
-        {/* <AIInsights expenses={expenses} /> */}
+        <FadeIn>
+          <Insights expenses={expenses} />
+          {/* <AIInsights expenses={expenses} /> */}
+        </FadeIn>
 
-        <ExpenseList />
+        <FadeIn>
+          <ExpenseList />
+        </FadeIn>
       </div>
     </div>
   );

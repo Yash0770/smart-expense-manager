@@ -14,25 +14,24 @@ export default function Navbar() {
   };
 
   return (
-    <div className="flex justify-between items-center px-4 md:px-8 py-3 border-b dark:border-gray-700">
-      {/* Left */}
+    <div className="sticky top-0 z-50 backdrop-blur-md bg-white/70 dark:bg-black/40 border-b border-gray-200 dark:border-white/10 px-6 py-3 flex justify-between items-center">
       <h1
-        className="font-bold text-lg cursor-pointer"
+        className="font-semibold text-lg tracking-tight cursor-pointer"
         onClick={() => router.push("/dashboard")}
       >
         💰 Expense Manager
       </h1>
 
-      {/* Right */}
       <div className="flex items-center gap-4">
         <ThemeToggle />
 
-        {/* Avatar */}
-        <div className="w-8 h-8 rounded-full bg-gray-400 flex items-center justify-center text-white">
-          U
+        <div className="w-9 h-9 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center text-white font-semibold">
+          Y
         </div>
-
-        <button onClick={handleLogout} className="text-sm text-red-500">
+        <button
+          onClick={handleLogout}
+          className="font-semibold text-sm text-red-500"
+        >
           Logout
         </button>
       </div>

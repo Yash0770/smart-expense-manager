@@ -87,7 +87,7 @@ export default function AddExpenseForm() {
         />
       </div>
 
-      <button className="mt-4 w-full bg-black dark:bg-white dark:text-black text-white py-2 rounded-lg">
+      <button className="mt-4 w-full bg-black dark:bg-white dark:text-black text-white py-2 rounded-lg cursor-pointer">
         Add Expense
       </button>
       <button
