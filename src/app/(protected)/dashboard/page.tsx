@@ -19,6 +19,7 @@ import {
   getWeeklySpending,
   compareLastMonth,
 } from "@/src/lib/advancedAnalytics";
+import Skeleton from "@/src/components/Skeleton";
 
 export default function Dashboard() {
   const { data, isLoading } = useQuery({
@@ -29,7 +30,8 @@ export default function Dashboard() {
     },
   });
 
-  if (isLoading) return <p>Loading...</p>;
+  // if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <Skeleton />;
 
   const expenses = data?.data || [];
 

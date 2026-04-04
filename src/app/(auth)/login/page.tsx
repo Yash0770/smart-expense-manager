@@ -13,21 +13,23 @@ export default function Login() {
     password: "",
   });
 
+  const [loading, setLoading] = useState(false);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
 
     try {
       const res = await api.post("/auth/login", form);
 
-      // store token
       localStorage.setItem("token", res.data.token);
-
-      toast.success("Login successful 🚀");
 
       router.push("/dashboard");
     } catch {
-      toast.error("Invalid credentials ❌");
+      toast.error("Login failed");
     }
+
+    setLoading(false);
   };
 
   return (
@@ -53,8 +55,15 @@ export default function Login() {
           onChange={(e) => setForm({ ...form, password: e.target.value })}
         />
 
-        <button className="w-full bg-black text-white py-2 rounded-lg">
-          Login
+        <button
+          disabled={loading}
+          className="w-full bg-black text-white py-2 rounded-lg flex justify-center"
+        >
+          {loading ? (
+            <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+          ) : (
+            "Login"
+          )}
         </button>
 
         <p className="text-sm mt-3 text-center">
