@@ -19,7 +19,10 @@ export default function Navbar() {
         className="font-semibold text-lg tracking-tight cursor-pointer"
         onClick={() => router.push("/dashboard")}
       >
-        💰 Expense Manager
+        <span>💰</span>{" "}
+        <span className="bg-gradient-to-r from-purple-500 to-blue-500 text-transparent bg-clip-text">
+          Expense Manager
+        </span>
       </h1>
 
       <div className="flex items-center gap-4">

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { setTheme, initTheme } from "@/src/lib/theme";
+import Icon from "./ui/Icon/Icon";
 
 export default function ThemeToggle() {
   const [dark, setDark] = useState(false);
@@ -18,11 +19,12 @@ export default function ThemeToggle() {
   };
 
   return (
-    <button
-      onClick={toggle}
-      className="px-3 py-1 border rounded-lg text-sm"
-    >
-      {dark ? "☀️ Light" : "🌙 Dark"}
+    <button onClick={toggle} className="px-2 py-1">
+      {dark ? (
+        <Icon name="sunIcon" size={20} className="text-yellow-200" />
+      ) : (
+        <Icon name="moonIcon" size={20} className="" />
+      )}
     </button>
   );
 }
