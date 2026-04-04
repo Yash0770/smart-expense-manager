@@ -21,9 +21,9 @@ export default function ThemeToggle() {
   return (
     <button onClick={toggle} className="px-2 py-1">
       {dark ? (
-        <Icon name="sunIcon" size={20} className="text-yellow-200" />
+        <Icon name="sunIcon" size={27} className="text-yellow-200" />
       ) : (
-        <Icon name="moonIcon" size={20} className="" />
+        <Icon name="moonIcon" size={27} className="" />
       )}
     </button>
   );

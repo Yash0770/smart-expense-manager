@@ -1,8 +1,9 @@
 "use client";
 
-import Navbar from "@/src/components/Navbar";
-import { useRouter } from "next/navigation";
+import Sidebar from "@/src/components/layout/Sidebar";
 import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import Navbar from "@/src/components/Navbar";
 
 export default function ProtectedLayout({
   children,
@@ -20,9 +21,18 @@ export default function ProtectedLayout({
   }, []);
 
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <div className="p-4 md:p-8">{children}</div>
+    <div className="h-screen flex overflow-hidden">
+      {/* Sidebar */}
+      <Sidebar />
+
+      {/* Right Side */}
+      <div className="flex-1 flex flex-col">
+        <Navbar />
+
+        <main className="flex-1 overflow-y-auto p-4 md:p-6 bg-gray-100 dark:bg-black">
+          {children}
+        </main>
+      </div>
     </div>
   );
 }
