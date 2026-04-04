@@ -53,7 +53,7 @@ export default function ExpenseList() {
           <p className="text-sm">Start by adding one</p>
         </div>
       ) : (
-        <div className="bg-white dark:bg-gray-900 p-4 rounded-2xl shadow-md mt-4">
+        <div className="bg-white dark:bg-[#111827] p-4 rounded-2xl shadow-md mt-4">
           <h2 className="text-lg font-semibold mb-4">Expenses</h2>
 
           <div className="space-y-3">

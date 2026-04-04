@@ -10,7 +10,7 @@ import {
 
 export default function MonthlyChart({ data }: { data: any[] }) {
   return (
-    <div className="bg-white dark:bg-gray-900 p-4 rounded-2xl shadow-md h-[300px]">
+    <div className="bg-white dark:bg-[#111827] p-4 rounded-2xl shadow-md h-[300px]">
       <h2 className="mb-4 font-semibold">Monthly Spending</h2>
 
       <ResponsiveContainer width="100%" height="100%">

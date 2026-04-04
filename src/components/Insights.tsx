@@ -11,7 +11,7 @@ export default function Insights({
   if (!insights) return null;
 
   return (
-    <div className="bg-white dark:bg-gray-900 p-4 rounded-2xl shadow-md">
+    <div className="bg-white dark:bg-[#111827] p-4 rounded-2xl shadow-md">
       <h2 className="font-semibold mb-3">Insights</h2>
 
       <div className="space-y-2 text-sm">

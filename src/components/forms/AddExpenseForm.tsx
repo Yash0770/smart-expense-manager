@@ -52,7 +52,7 @@ export default function AddExpenseForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-white dark:bg-gray-900 p-4 md:p-6 rounded-2xl shadow-md w-full"
+      className="bg-white dark:bg-[#111827] p-4 md:p-6 rounded-2xl shadow-md w-full"
     >
       <h2 className="text-lg md:text-xl font-semibold mb-4">Add Expense</h2>
 

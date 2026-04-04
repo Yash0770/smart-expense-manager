@@ -22,7 +22,7 @@ export default function AIInsights({ expenses }: { expenses: any[] }) {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-900 p-4 rounded-2xl shadow-md">
+    <div className="bg-white dark:bg-[#111827] p-4 rounded-2xl shadow-md">
       <h2 className="font-semibold mb-3">AI Insights 🤖</h2>
 
       <button
