@@ -7,13 +7,14 @@ import Skeleton from "@/src/components/Skeleton";
 
 export default function ComparisonPage() {
   const { data, isLoading } = useExpenses();
+  const expenses = Array.isArray(data) ? data : data?.data || [];
 
   if (isLoading) return <Skeleton />;
 
   return (
     <div>
       <h1 className="text-xl font-semibold mb-4">Comparison</h1>
-      <ComparisonCard data={compareLastMonth(data)} />
+      <ComparisonCard data={compareLastMonth(expenses)} />
     </div>
   );
 }

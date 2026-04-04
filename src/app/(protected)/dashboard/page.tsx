@@ -7,10 +7,11 @@ import Skeleton from "@/src/components/Skeleton";
 
 export default function DashboardPage() {
   const { data, isLoading } = useExpenses();
+  const expenses = Array.isArray(data) ? data : data?.data || [];
 
   if (isLoading) return <Skeleton />;
 
-  const monthlyData = getMonthlyData(data);
+  const monthlyData = getMonthlyData(expenses);
 
   return (
     <div className="space-y-6">

@@ -7,10 +7,11 @@ import { getCategoryData } from "@/src/lib/analytics";
 
 export default function CategoryPage() {
   const { data, isLoading } = useExpenses();
+  const expenses = Array.isArray(data) ? data : data?.data || [];
 
   if (isLoading) return <Skeleton />;
 
-  const categoryData = getCategoryData(data);
+  const categoryData = getCategoryData(expenses);
 
   return (
     <div>

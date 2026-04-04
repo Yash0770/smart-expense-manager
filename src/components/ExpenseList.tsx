@@ -45,9 +45,11 @@ export default function ExpenseList() {
 
   if (isLoading) return <Skeleton />;
 
+  const expenses = Array.isArray(data) ? data : data?.data || [];
+
   return (
     <>
-      {data?.data.length === 0 ? (
+      {expenses.length === 0 ? (
         <div className="text-center py-10 text-gray-500">
           <p>No expenses yet 💸</p>
           <p className="text-sm">Start by adding one</p>
@@ -57,7 +59,7 @@ export default function ExpenseList() {
           <h2 className="text-lg font-semibold mb-4">Expenses</h2>
 
           <div className="space-y-3">
-            {data?.data.map((item) => (
+            {expenses.map((item) => (
               <div
                 key={item._id}
                 className="border p-3 rounded-lg dark:border-gray-700"
