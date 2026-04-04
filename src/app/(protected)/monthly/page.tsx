@@ -5,18 +5,15 @@ import { getMonthlyData } from "@/src/lib/analytics";
 import MonthlyChart from "@/src/components/charts/MonthlyChart";
 import Skeleton from "@/src/components/Skeleton";
 
-export default function DashboardPage() {
+export default function MonthlyPage() {
   const { data, isLoading } = useExpenses();
 
   if (isLoading) return <Skeleton />;
 
-  const monthlyData = getMonthlyData(data);
-
   return (
-    <div className="space-y-6">
-      <h1 className="text-xl font-semibold">Overview</h1>
-
-      <MonthlyChart data={monthlyData} />
+    <div>
+      <h1 className="text-xl font-semibold mb-4">Monthly Trends</h1>
+      <MonthlyChart data={getMonthlyData(data)} />
     </div>
   );
 }
