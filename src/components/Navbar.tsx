@@ -15,9 +15,17 @@ export default function Navbar() {
   };
 
   return (
-    <div className="h-14 flex items-center justify-between px-4 border-b dark:border-white/10 backdrop-blur-md bg-white/70 dark:bg-black/40">
+    <div className="h-14 flex items-center justify-between px-4 border-b dark:border-white/10 backdrop-blur-md bg-white/70 dark:bg-[#030712]">
       {/* Left */}
-      <h1 className="font-semibold">Dashboard</h1>
+      <h2
+        className="font-semibold text-lg tracking-tight cursor-pointer"
+        onClick={() => router.push("/dashboard")}
+      >
+        <span>💰</span>{" "}
+        <span className="bg-gradient-to-r from-purple-500 to-blue-500 text-transparent bg-clip-text">
+          Expense Manager
+        </span>
+      </h2>
 
       {/* Right */}
       <div className="flex items-center gap-4">

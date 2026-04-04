@@ -21,15 +21,13 @@ export default function ProtectedLayout({
   }, []);
 
   return (
-    <div className="h-screen flex overflow-hidden">
-      {/* Sidebar */}
-      <Sidebar />
+    <div className="h-screen flex flex-col overflow-hidden bg-gray-100 dark:bg-[#030712]">
+      <Navbar />
 
-      {/* Right Side */}
-      <div className="flex-1 flex flex-col">
-        <Navbar />
+      <div className="flex flex-1 overflow-hidden">
+        <Sidebar />
 
-        <main className="flex-1 overflow-y-auto p-4 md:p-6 bg-gray-100 dark:bg-black">
+        <main className="flex-1 overflow-y-auto p-4 md:p-6 bg-gray-100 dark:bg-[#030712]">
           {children}
         </main>
       </div>

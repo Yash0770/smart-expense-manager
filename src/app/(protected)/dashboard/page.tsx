@@ -39,7 +39,7 @@ export default function Dashboard() {
   const comparison = compareLastMonth(expenses);
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-black">
+    <div className="min-h-screen bg-gray-100 dark:bg-[#030712]">
       <div className="max-w-7xl mx-auto space-y-6 p-4 md:p-8">
         {/* Top Form */}
         <FadeIn>
