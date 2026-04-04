@@ -26,10 +26,19 @@ body {
   @apply bg-white text-black dark:bg-black dark:text-white;
 }
 
- .input {
+ /* .input {
   @apply border p-2 rounded-lg w-full outline-none 
   focus:ring-2 focus:ring-black 
   dark:bg-gray-900 dark:border-gray-700 dark:text-white;
+} */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background-color: transparent !important;
+  transition: background-color 5000s ease-in-out 0s !important;
 }
 
 /* Smooth transitions */
