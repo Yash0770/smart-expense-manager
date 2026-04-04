@@ -2,7 +2,7 @@
 
 ## 🚀 Live Demo
 
-<!-- Link -->
+https://smart-expense-manager-seven.vercel.app/
 
 ## 🧠 Problem Statement
 
@@ -49,5 +49,7 @@ Managing personal expenses is often manual and lacks insights. This app helps us
 ## 👨‍💻 Author
 
 Yash Solanki
+
 GitHub: https://github.com/Yash0770
+
 LinkedIn: https://www.linkedin.com/in/yash-solanki-45a6b41bb/
