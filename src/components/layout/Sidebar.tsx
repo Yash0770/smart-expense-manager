@@ -10,8 +10,8 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="w-46 lg:w-64 border-r border-gray-200 bg-gray-50 dark:bg-[#030712] flex flex-col dark:border-white/10 hidden md:block">
-      <div className="mt-4 flex-1 overflow-y-auto scrollbar p-5">
+    <aside className="w-46 lg:w-64 border-r border-gray-200 bg-gray-50 dark:bg-[#030712] dark:border-white/10 hidden md:flex flex-col overflow-hidden">
+      <div className="flex-1 overflow-y-auto scrollbar p-5 mt-4">
         {sidebarSections.map((section: SidebarSection, index: number) => (
           <div key={index} className="mb-6">
             <h2 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-4 uppercase">

@@ -19,6 +19,8 @@ import PlusIcon from "./icons/PlusIcon";
 import SunIcon from "./icons/SunIcon";
 import UserIcon from "./icons/UserIcon";
 import UserPlusIcon from "./icons/UserPlusIcon";
+import LinkedinIcon from "./icons/LinkedinIcon";
+import GithubIcon from "./icons/GithubIcon";
 
 export const ICON_MAP = {
   sunIcon: SunIcon,
@@ -41,5 +43,7 @@ export const ICON_MAP = {
   userPlusIcon: UserPlusIcon,
   circleAlertIcon: CircleAlertIcon,
   menuIcon: MenuIcon,
-  closeIcon: CloseIcon
+  closeIcon: CloseIcon,
+  linkedinIcon: LinkedinIcon,
+  githubIcon: GithubIcon
 };
