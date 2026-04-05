@@ -11,10 +11,22 @@ export default function ComparisonPage() {
 
   if (isLoading) return <Skeleton />;
 
+  const comparison = compareLastMonth(expenses);
+
   return (
-    <div>
-      <h1 className="text-xl font-semibold mb-4">Comparison</h1>
-      <ComparisonCard data={compareLastMonth(expenses)} />
+    <div className="space-y-6">
+      <div>
+        <h1 className="text-xl font-semibold text-gray-900 dark:text-white">
+          Comparison
+        </h1>
+        <p className="text-sm text-gray-400 dark:text-white/30 mt-1">
+          Track how your spending changes month over month
+        </p>
+      </div>
+
+      <div className="max-w-lg">
+        <ComparisonCard data={comparison} />
+      </div>
     </div>
   );
 }

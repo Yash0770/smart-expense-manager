@@ -35,7 +35,7 @@ export default function Sidebar() {
                       `}
                     >
                       <Icon name={item.icon} size={20} />
-                      <span>{item.label}</span>
+                      <span className="whitespace-nowrap">{item.label}</span>
                     </div>
                   </Link>
                 );
