@@ -26,6 +26,13 @@ import TitleIcon from "./icons/TitleIcon";
 import AmountIcon from "./icons/AmountIcon";
 import AiIcon from "./icons/AiIcon";
 import CalendarIcon from "./icons/CalendarIcon";
+import DeleteIcon from "./icons/DeleteIcon";
+import TrashTwoIcon from "./icons/TrashTwoIcon";
+import PencilIcon from "./icons/PencilIcon";
+import CheckIcon from "./icons/CheckIcon";
+import ClipboardListIcon from "./icons/ClipboardListIcon";
+import ChevronRightIcon from "./icons/ChevronRight";
+import ChevronLeftIcon from "./icons/ChevronLeft";
 
 export const ICON_MAP = {
   sunIcon: SunIcon,
@@ -55,5 +62,12 @@ export const ICON_MAP = {
   titleIcon: TitleIcon,
   amountIcon: AmountIcon,
   aiIcon: AiIcon,
-  calendarIcon: CalendarIcon
+  calendarIcon: CalendarIcon,
+  deleteIcon: DeleteIcon,
+  trashTwoIcon: TrashTwoIcon,
+  pencilIcon: PencilIcon,
+  checkIcon: CheckIcon,
+  clipboardListIcon: ClipboardListIcon,
+  chevronLeftIcon: ChevronLeftIcon,
+  chevronRightIcon: ChevronRightIcon
 };
