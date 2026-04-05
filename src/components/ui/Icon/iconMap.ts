@@ -21,6 +21,11 @@ import UserIcon from "./icons/UserIcon";
 import UserPlusIcon from "./icons/UserPlusIcon";
 import LinkedinIcon from "./icons/LinkedinIcon";
 import GithubIcon from "./icons/GithubIcon";
+import BankNoteDownIcon from "./icons/BankNoteDownIcon";
+import TitleIcon from "./icons/TitleIcon";
+import AmountIcon from "./icons/AmountIcon";
+import AiIcon from "./icons/AiIcon";
+import CalendarIcon from "./icons/CalendarIcon";
 
 export const ICON_MAP = {
   sunIcon: SunIcon,
@@ -45,5 +50,10 @@ export const ICON_MAP = {
   menuIcon: MenuIcon,
   closeIcon: CloseIcon,
   linkedinIcon: LinkedinIcon,
-  githubIcon: GithubIcon
+  githubIcon: GithubIcon,
+  bankNoteDownIcon: BankNoteDownIcon,
+  titleIcon: TitleIcon,
+  amountIcon: AmountIcon,
+  aiIcon: AiIcon,
+  calendarIcon: CalendarIcon
 };
