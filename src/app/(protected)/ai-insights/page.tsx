@@ -10,8 +10,15 @@ export default function AIPage() {
   if (isLoading) return <Skeleton />;
 
   return (
-    <div>
-      <h1 className="text-xl font-semibold mb-4">AI Insights</h1>
+    <div className="space-y-6">
+      <div>
+        <h1 className="text-xl font-semibold text-gray-900 dark:text-white">
+          AI Insights
+        </h1>
+        <p className="text-sm text-gray-400 dark:text-white/30 mt-1">
+          Let AI analyze your spending and give you smart suggestions
+        </p>
+      </div>
       <AIInsights expenses={data} />
     </div>
   );

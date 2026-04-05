@@ -10,8 +10,15 @@ export default function InsightsPage() {
   if (isLoading) return <Skeleton />;
 
   return (
-    <div>
-      <h1 className="text-xl font-semibold mb-4">Insights</h1>
+    <div className="space-y-6">
+      <div>
+        <h1 className="text-xl font-semibold text-gray-900 dark:text-white">
+          Insights
+        </h1>
+        <p className="text-sm text-gray-400 dark:text-white/30 mt-1">
+          A summary of your spending patterns
+        </p>
+      </div>
       <Insights expenses={data} />
     </div>
   );
